@@ -1,5 +1,5 @@
-import { dateToYYYYMMDDHHMMSSFFFString, dateToYYYYMMDDString } from '@/utils';
-import { DatevFile, DatevRecord } from '@/datev';
+import { dateToYYYYMMDDHHMMSSFFFString, dateToYYYYMMDDString } from '../utils';
+import { DatevFile, DatevRecord } from '../datev';
 
 export const DatevFileHeader = {
   /**

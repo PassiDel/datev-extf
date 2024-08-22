@@ -1,4 +1,4 @@
-import { DatevFileHeader } from '@/formats';
+import { DatevFileHeader } from './formats';
 
 type HeaderConfig = {
   defaultValue?: DatevPrimitive;

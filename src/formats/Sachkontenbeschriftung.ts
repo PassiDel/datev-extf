@@ -1,4 +1,4 @@
-import { DatevFile, DatevRecord } from '@/datev';
+import { DatevFile, DatevRecord } from '../datev';
 
 export const DatevSachkontenbeschriftungenHeader = {
   Kontenbeschriftung: '' as string,
