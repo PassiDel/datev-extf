@@ -1,2 +1,2 @@
-export * from './formats/file';
-export * from './formats/Sachkontenbeschriftung';
+export * from './formats/file.js';
+export * from './formats/Sachkontenbeschriftung.js';

@@ -1,5 +1,8 @@
-import { dateToYYYYMMDDHHMMSSFFFString, dateToYYYYMMDDString } from '../utils';
-import { DatevFile, DatevRecord } from '../datev';
+import {
+  dateToYYYYMMDDHHMMSSFFFString,
+  dateToYYYYMMDDString
+} from '../utils.js';
+import { DatevFile, DatevRecord } from '../datev.js';
 
 export const DatevFileHeader = {
   /**

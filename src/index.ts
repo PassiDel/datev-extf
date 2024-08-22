@@ -1,3 +1,3 @@
 export const foo = 'Foo';
 
-export * from './formats';
+export * from './formats.js';
