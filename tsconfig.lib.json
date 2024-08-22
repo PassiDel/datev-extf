@@ -10,15 +10,15 @@
     "noImplicitAny": true,
     "allowJs": true,
     "declaration": true,
-    "outDir": "dist/module",
+    "outDir": "./module/",
     "resolveJsonModule": true,
-    "rootDir": "./src",
     "types": ["vitest/globals"],
     "composite": true,
     "paths": {
       "@/*": ["./src/*"]
     }
   },
+  "include": ["./src/**/*"],
   "exclude": [
     "./src/**/__tests__",
     "./test/**/*",

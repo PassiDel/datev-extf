@@ -1,24 +1,26 @@
 {
   "name": "datev-extf",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Export data as DATEV EXTF files!",
   "files": [
-    "dist"
+    "lib/",
+    "module/",
+    "src/"
   ],
-  "main": "./dist/lib/index.js",
-  "types": "./dist/lib/index.d.ts",
-  "module": "./dist/module/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "module": "./module/index.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/module/index.d.ts",
+        "types": "./module/index.d.ts",
         "default": "./module/index.js"
       },
       "require": {
-        "types": "./dist/lib/index.d.ts",
-        "default": "./dist/lib/index.js"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
       },
-      "default": "./dist/lib/index.js"
+      "default": "./lib/index.js"
     }
   },
   "type": "module",
@@ -35,7 +37,7 @@
   },
   "scripts": {
     "build": "npm run clean && npm run type:dts",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist module lib",
     "test": "vitest run",
     "type:check": "tsc --noEmit",
     "type:dts": "tsc -p ./tsconfig.lib.json && tsc -p ./tsconfig.lib.cjs.json && tsconfig-to-dual-package ./tsconfig.lib.json ./tsconfig.lib.cjs.json",
