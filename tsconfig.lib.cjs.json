@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "outDir": "dist/cjs"
+  },
+  "exclude": [
+    "./src/**/__tests__",
+    "./test/**/*",
+    "./examples/**/*",
+    "./vitest.config.js",
+    "./dist"
+  ]
+}

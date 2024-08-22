@@ -1,22 +1,24 @@
 {
   "name": "datev-extf",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Export data as DATEV EXTF files!",
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
+  "module": "./dist/module/index.js",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    },
-    "./*": {
-      "require": "./dist/*.js",
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.mjs"
+      "import": {
+        "types": "./dist/module/index.d.ts",
+        "default": "./module/index.js"
+      },
+      "require": {
+        "types": "./dist/lib/index.d.ts",
+        "default": "./dist/lib/index.js"
+      },
+      "default": "./dist/lib/index.js"
     }
   },
   "type": "module",
@@ -36,7 +38,7 @@
     "clean": "rimraf dist",
     "test": "vitest run",
     "type:check": "tsc --noEmit",
-    "type:dts": "tsc --project tsconfig.lib.json",
+    "type:dts": "tsc -p ./tsconfig.lib.json && tsc -p ./tsconfig.lib.cjs.json && tsconfig-to-dual-package ./tsconfig.lib.json ./tsconfig.lib.cjs.json",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "check": "npm run type:check && npm run format:check",
@@ -58,6 +60,7 @@
   "devDependencies": {
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
+    "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }

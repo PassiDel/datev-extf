@@ -10,7 +10,7 @@
     "noImplicitAny": true,
     "allowJs": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "dist/module",
     "resolveJsonModule": true,
     "rootDir": "./src",
     "types": ["vitest/globals"],
@@ -23,6 +23,7 @@
     "./src/**/__tests__",
     "./test/**/*",
     "./examples/**/*",
-    "./vitest.config.js"
+    "./vitest.config.js",
+    "./dist"
   ]
 }
