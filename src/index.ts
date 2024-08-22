@@ -1,3 +1,1 @@
-export const foo = 'Foo';
-
-export * from './formats.js';
+export * from './datev.js';

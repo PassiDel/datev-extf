@@ -1,5 +1,5 @@
 import { assert, test } from 'vitest';
-import { DatevSachkontenbeschriftungenHeader } from '../src';
+import { DatevSachkontenbeschriftungenHeader } from '../src/formats';
 import { datevToCsv } from '@/datev';
 
 test('CSV generation', () => {

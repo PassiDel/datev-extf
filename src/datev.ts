@@ -1,4 +1,4 @@
-import { DatevFileHeader } from './formats.js';
+import { DatevFileHeader } from './formats';
 
 type HeaderConfig = {
   defaultValue?: DatevPrimitive;
@@ -113,14 +113,16 @@ export function datevToCsv<T extends DatevFile>(
     .map((v) => extendRecordWithDefaults(fileType, v))
     .map((r) => Object.values(r) as string[]);
 
-  const headerRow = Object.keys(fileType).map((h: keyof T) => {
-    const datevFileHeaderElement = fileType[h];
+  const headerRow = Object.keys(fileType)
+    .map((h: keyof T) => {
+      const datevFileHeaderElement = fileType[h];
 
-    return isHeaderWithConfig(datevFileHeaderElement) &&
-      datevFileHeaderElement.customName
-      ? datevFileHeaderElement.customName
-      : (h as string);
-  });
+      return isHeaderWithConfig(datevFileHeaderElement) &&
+        datevFileHeaderElement.customName
+        ? datevFileHeaderElement.customName
+        : (h as string);
+    })
+    .map((h) => `"${h}"`);
 
   return [fileHeader, headerRow, ...fullRecords]
     .map((c) => c.join(';'))
