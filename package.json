@@ -1,0 +1,44 @@
+{
+  "name": "datev-extf",
+  "version": "1.0.0",
+  "description": "Export as DATEV EXTF files!",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format cjs,esm",
+    "build": "npm run build-fast -- --dts-resolve",
+    "test": "vitest run",
+    "check": "prettier --check .",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "DATEV",
+    "EXTF",
+    "Accounting",
+    "Export"
+  ],
+  "author": {
+    "name": "Pascal Syma",
+    "email": "npm@syma.dev",
+    "url": "https://syma.dev"
+  },
+  "license": "All rights reserved.",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
